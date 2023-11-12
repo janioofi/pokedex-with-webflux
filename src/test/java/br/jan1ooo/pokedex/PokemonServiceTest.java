@@ -72,4 +72,12 @@ public class PokemonServiceTest {
                 .expectError(ResponseStatusException.class)
                 .verify();
     }
+
+    @Test
+    @DisplayName("Deve excluir um pokemon com sucesso")
+    public void deveExcluirUmPokemonComSucesso(){
+        StepVerifier.create(pokemonService.excluirPokemon("3f63543f-6d18-45ca-8457-b7bd32c18ad2"))
+                .expectSubscription()
+                .verifyComplete();
+    }
 }
